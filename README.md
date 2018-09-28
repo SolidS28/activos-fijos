@@ -1,0 +1,2 @@
+# activos-fijos
+Prueba técnica
