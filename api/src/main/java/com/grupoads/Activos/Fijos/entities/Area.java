@@ -2,10 +2,12 @@ package com.grupoads.Activos.Fijos.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.springframework.lang.NonNull;
 
 @Entity
+@Table(name = "areas")
 public class Area extends EncargadoActivo {
 	
 	@ManyToOne
@@ -13,6 +15,11 @@ public class Area extends EncargadoActivo {
 	private Ciudad ciudad;
 	
 	protected Area() { }
+	
+	public Area(String nombres, Ciudad ciudad) {
+		this.nombres = nombres;
+		this.ciudad = ciudad;
+	}
 
 	/**
 	 * @return the ciudad

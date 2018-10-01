@@ -14,10 +14,46 @@ public abstract class EncargadoActivo {
 
 	@Id
 	@GeneratedValue
-	private Long id;
-	
+	protected Long id;
+
 	@NonNull
-	private String nombres;
-	
+	protected String nombres;
+
 	protected EncargadoActivo() { }
+
+	/**
+	 * @param nombres
+	 */
+	public EncargadoActivo(String nombres) {
+		super();
+		this.nombres = nombres;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the nombres
+	 */
+	public String getNombres() {
+		return nombres;
+	}
+
+	/**
+	 * @param nombres the nombres to set
+	 */
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
 }

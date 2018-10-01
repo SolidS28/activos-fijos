@@ -1,14 +1,13 @@
 package com.grupoads.Activos.Fijos.entities;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
 import org.springframework.lang.NonNull;
 
 @Entity
+@Table(name = "personas")
 public class Persona extends EncargadoActivo {
 	
 	@NonNull
@@ -17,13 +16,14 @@ public class Persona extends EncargadoActivo {
 	@Column(unique = true)
 	private String identificacion;
 	
-	@NonNull
-	@Basic
-	@Enumerated(EnumType.STRING)
-	private Genero genero;
-	
 	protected Persona() { }
 
+	public Persona(String nombres, String apellidos, String identificacion) {
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.identificacion = identificacion;
+	}
+	
 	/**
 	 * @return the apellidos
 	 */
@@ -50,19 +50,5 @@ public class Persona extends EncargadoActivo {
 	 */
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
-	}
-
-	/**
-	 * @return the genero
-	 */
-	public Genero getGenero() {
-		return genero;
-	}
-
-	/**
-	 * @param genero the genero to set
-	 */
-	public void setGenero(Genero genero) {
-		this.genero = genero;
 	}
 }

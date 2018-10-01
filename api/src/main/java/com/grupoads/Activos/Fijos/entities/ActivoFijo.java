@@ -1,10 +1,13 @@
 package com.grupoads.Activos.Fijos.entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -13,11 +16,14 @@ import javax.validation.constraints.Past;
 
 import org.springframework.lang.NonNull;
 
+import com.grupoads.Activos.Fijos.utils.Estado;
+
 @Entity
 @Table(name = "activos_fijos")
 public class ActivoFijo {
 	
 	@Id
+	@GeneratedValue
 	private Long id;
 	
 	@NonNull
@@ -30,6 +36,7 @@ public class ActivoFijo {
 	private String descripcion;
 	
 	@NonNull
+	@ManyToOne
 	private TipoActivo tipo;
 	
 	private String serial;
@@ -42,23 +49,29 @@ public class ActivoFijo {
 	
 	private double largo;
 	
+	@NonNull
 	@Min(0)
 	private double precioCompra;
 	
 	@NonNull
 	@Past
-	@Basic
-	private Date fechaEntrega;
+	private LocalDate fechaEntrega;
 	
-	@Basic
-	private Date fechaBaja;
+	private LocalDate fechaBaja;
 	
 	private String color;
 	
 	@ManyToOne
 	private EncargadoActivo encargado;
 	
+	@NonNull
+	@Basic
+	@Enumerated(EnumType.STRING)
+	private Estado estado;
+	
 	protected ActivoFijo() {}
+
+	
 
 	/**
 	 * @param numero
@@ -75,10 +88,11 @@ public class ActivoFijo {
 	 * @param fechaBaja
 	 * @param color
 	 * @param encargado
+	 * @param estado
 	 */
 	public ActivoFijo(Long numero, String nombre, String descripcion, TipoActivo tipo, String serial, double peso,
-			double alto, double ancho, double largo, @Min(0) double precioCompra, @Past Date fechaEntrega,
-			Date fechaBaja, String color, EncargadoActivo encargado) {
+			double alto, double ancho, double largo, @Min(0) double precioCompra, @Past LocalDate fechaEntrega,
+			LocalDate fechaBaja, String color, EncargadoActivo encargado, Estado estado) {
 		super();
 		this.numero = numero;
 		this.nombre = nombre;
@@ -94,7 +108,11 @@ public class ActivoFijo {
 		this.fechaBaja = fechaBaja;
 		this.color = color;
 		this.encargado = encargado;
+		this.estado = estado;
 	}
+
+
+
 
 	/**
 	 * @return the id
@@ -253,28 +271,28 @@ public class ActivoFijo {
 	/**
 	 * @return the fechaEntrega
 	 */
-	public Date getFechaEntrega() {
+	public LocalDate getFechaEntrega() {
 		return fechaEntrega;
 	}
 
 	/**
 	 * @param fechaEntrega the fechaEntrega to set
 	 */
-	public void setFechaEntrega(Date fechaEntrega) {
+	public void setFechaEntrega(LocalDate fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
 
 	/**
 	 * @return the fechaBaja
 	 */
-	public Date getFechaBaja() {
+	public LocalDate getFechaBaja() {
 		return fechaBaja;
 	}
 
 	/**
 	 * @param fechaBaja the fechaBaja to set
 	 */
-	public void setFechaBaja(Date fechaBaja) {
+	public void setFechaBaja(LocalDate fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
 

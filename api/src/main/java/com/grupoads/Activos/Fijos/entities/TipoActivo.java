@@ -16,5 +16,42 @@ public class TipoActivo {
 	private String tipo;
 	
 	protected TipoActivo() { }
+
+	/**
+	 * @param tipo
+	 */
+	public TipoActivo(String tipo) {
+		super();
+		this.tipo = tipo;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the tipo
+	 */
+	public String getTipo() {
+		return tipo;
+	}
+
+	/**
+	 * @param tipo the tipo to set
+	 */
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 	
 }
