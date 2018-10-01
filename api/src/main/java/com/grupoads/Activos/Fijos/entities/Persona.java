@@ -17,6 +17,12 @@ public class Persona extends EncargadoActivo {
 	
 	protected Persona() { }
 
+	/**
+	 * Constructor de la clase Persona
+	 * @param nombres - Nombres
+	 * @param apellidos - Apellidos
+	 * @param identificacion - Número de identificación
+	 */
 	public Persona(String nombres, String apellidos, String identificacion) {
 		this.nombres = nombres;
 		this.apellidos = apellidos;

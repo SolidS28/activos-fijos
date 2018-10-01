@@ -25,6 +25,7 @@ public class MissingInfoAdvice {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	List<FieldError> missingInfoHandler(MethodArgumentNotValidException ex) {
 		BindingResult result = ex.getBindingResult();
+		log.debug(result.toString());
 		return result.getFieldErrors();
 	}
 
