@@ -9,4 +9,5 @@ public class ActivosFijosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ActivosFijosApplication.class, args);
 	}
+
 }

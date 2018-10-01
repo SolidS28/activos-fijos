@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ciudades")
@@ -13,11 +14,13 @@ public class Ciudad {
 	@GeneratedValue
 	private Long id;
 	
+	@NotNull
 	private String nombre;
 
 	protected Ciudad() {}
 	
 	/**
+	 * Constructor de la entidad
 	 * @param nombre
 	 */
 	public Ciudad(String nombre) {
