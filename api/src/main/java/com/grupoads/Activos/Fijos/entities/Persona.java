@@ -3,14 +3,13 @@ package com.grupoads.Activos.Fijos.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import org.springframework.lang.NonNull;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "personas")
 public class Persona extends EncargadoActivo {
 	
-	@NonNull
+	@NotNull
 	private String apellidos;
 	
 	@Column(unique = true)

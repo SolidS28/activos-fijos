@@ -2,6 +2,8 @@ package com.grupoads.Activos.Fijos.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +34,7 @@ public class ActivosController {
 	}
 	
 	@PostMapping("/activo")
-	ActivoFijo registrarActivo(@RequestBody ActivoFijo activo) {
+	ActivoFijo registrarActivo(@Valid @RequestBody ActivoFijo activo) {
 		ActivoFijo respuesta = activoFijoRespository.save(activo);
 		return respuesta;
 	}

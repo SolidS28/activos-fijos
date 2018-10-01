@@ -5,8 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
-import org.springframework.lang.NonNull;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -16,10 +15,11 @@ public abstract class EncargadoActivo {
 	@GeneratedValue
 	protected Long id;
 
-	@NonNull
+	@NotNull
 	protected String nombres;
 
-	protected EncargadoActivo() { }
+	protected EncargadoActivo() {
+	}
 
 	/**
 	 * @param nombres

@@ -12,11 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import org.springframework.lang.NonNull;
-
 import com.grupoads.Activos.Fijos.utils.Estado;
+import com.grupoads.Activos.Fijos.utils.TipoActivo;
 
 @Entity
 @Table(name = "activos_fijos")
@@ -26,17 +26,18 @@ public class ActivoFijo {
 	@GeneratedValue
 	private Long id;
 	
-	@NonNull
+	@NotNull
 	@Column(unique = true)
 	private Long numero;
 
-	@NonNull
+	@NotNull
 	private String nombre;
 	
 	private String descripcion;
 	
-	@NonNull
-	@ManyToOne
+	@NotNull
+	@Basic
+	@Enumerated(EnumType.STRING)
 	private TipoActivo tipo;
 	
 	private String serial;
@@ -49,11 +50,11 @@ public class ActivoFijo {
 	
 	private double largo;
 	
-	@NonNull
+	@NotNull
 	@Min(0)
 	private double precioCompra;
 	
-	@NonNull
+	@NotNull
 	@Past
 	private LocalDate fechaEntrega;
 	
@@ -64,7 +65,7 @@ public class ActivoFijo {
 	@ManyToOne
 	private EncargadoActivo encargado;
 	
-	@NonNull
+	@NotNull
 	@Basic
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
@@ -322,6 +323,24 @@ public class ActivoFijo {
 	 */
 	public void setEncargado(EncargadoActivo encargado) {
 		this.encargado = encargado;
+	}
+
+
+
+	/**
+	 * @return the estado
+	 */
+	public Estado getEstado() {
+		return estado;
+	}
+
+
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 	
 }
