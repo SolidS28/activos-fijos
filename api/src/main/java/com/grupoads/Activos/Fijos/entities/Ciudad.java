@@ -20,6 +20,7 @@ public class Ciudad {
 	protected Ciudad() {}
 	
 	/**
+	 * Constructor de la entidad
 	 * @param nombre
 	 */
 	public Ciudad(String nombre) {

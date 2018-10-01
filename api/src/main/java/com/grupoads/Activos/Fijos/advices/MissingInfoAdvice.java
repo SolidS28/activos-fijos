@@ -20,6 +20,11 @@ public class MissingInfoAdvice {
 
 	private static Logger log = LoggerFactory.getLogger(MissingInfoAdvice.class);
 	
+	/**
+	 * Capturador de exceptions para falta de elementos validos en una clase
+	 * @param ex - Exception esperada
+	 * @return - Lista de campos de error
+	 */
 	@ResponseBody
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

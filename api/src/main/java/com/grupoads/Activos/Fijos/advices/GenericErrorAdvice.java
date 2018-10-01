@@ -15,6 +15,11 @@ public class GenericErrorAdvice {
 	
 	private static Logger log = LoggerFactory.getLogger(GenericErrorAdvice.class);
 
+	/**
+	 * Capturador de exceptions genéricas
+	 * @param ex - Error del sistema
+	 * @return Mensaje confirmando error del sistema
+	 */
 	@ResponseBody
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

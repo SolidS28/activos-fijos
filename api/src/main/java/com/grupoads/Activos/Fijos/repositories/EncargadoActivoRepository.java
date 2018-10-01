@@ -8,6 +8,9 @@ import com.grupoads.Activos.Fijos.entities.EncargadoActivo;
 
 public interface EncargadoActivoRepository extends CrudRepository<EncargadoActivo, Long> {
 	
+	/**
+	 * Consulta que lista todos los elementos de la tabla
+	 */
 	@Override
 	List<EncargadoActivo> findAll();
 }

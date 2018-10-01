@@ -56,7 +56,7 @@ public class ActivoFijo {
 	
 	@NotNull
 	@Past
-	private LocalDate fechaEntrega;
+	private LocalDate fechaCompra;
 	
 	private LocalDate fechaBaja;
 	
@@ -75,6 +75,7 @@ public class ActivoFijo {
 	
 
 	/**
+	 * Constructor de la entidad
 	 * @param numero
 	 * @param nombre
 	 * @param descripcion
@@ -105,7 +106,7 @@ public class ActivoFijo {
 		this.ancho = ancho;
 		this.largo = largo;
 		this.precioCompra = precioCompra;
-		this.fechaEntrega = fechaEntrega;
+		this.fechaCompra = fechaEntrega;
 		this.fechaBaja = fechaBaja;
 		this.color = color;
 		this.encargado = encargado;
@@ -272,15 +273,15 @@ public class ActivoFijo {
 	/**
 	 * @return the fechaEntrega
 	 */
-	public LocalDate getFechaEntrega() {
-		return fechaEntrega;
+	public LocalDate getFechaCompra() {
+		return fechaCompra;
 	}
 
 	/**
-	 * @param fechaEntrega the fechaEntrega to set
+	 * @param fechaCompra the fechaEntrega to set
 	 */
-	public void setFechaEntrega(LocalDate fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
+	public void setFechaCompra(LocalDate fechaCompra) {
+		this.fechaCompra = fechaCompra;
 	}
 
 	/**

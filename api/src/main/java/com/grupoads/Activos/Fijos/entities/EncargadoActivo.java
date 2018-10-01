@@ -22,6 +22,7 @@ public abstract class EncargadoActivo {
 	}
 
 	/**
+	 * Constructor de la entidad
 	 * @param nombres
 	 */
 	public EncargadoActivo(String nombres) {

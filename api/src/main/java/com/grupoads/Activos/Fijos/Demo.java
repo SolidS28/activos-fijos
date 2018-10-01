@@ -25,7 +25,7 @@ import com.grupoads.Activos.Fijos.utils.TipoActivo;
 
 /**
  * @author nvivasbe
- *
+ * Clase que llena los datos de prueba de la base de datos
  */
 @Component
 public class Demo {
@@ -41,6 +41,9 @@ public class Demo {
 	@Autowired
 	ActivoFijoRespository activoFijoRespository;
 
+	/**
+	 * Método que llena la base con datos iniciales datos
+	 */
 	@EventListener(ContextRefreshedEvent.class)
 	public void seed() {
 		log.debug("Inicio DEMO");

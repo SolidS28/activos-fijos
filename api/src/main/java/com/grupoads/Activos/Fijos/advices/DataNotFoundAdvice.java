@@ -20,6 +20,11 @@ public class DataNotFoundAdvice {
 	
 	private static Logger log = LoggerFactory.getLogger(DataNotFoundException.class);
 
+	/**
+	 * Capturador de exceptions por no encontrar datos que satisfagan las consultas
+	 * @param ex - Error de data no encontrada
+	 * @return Mensaje informando la falta de coincidencias
+	 */
 	@ResponseBody
 	@ExceptionHandler(DataNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)

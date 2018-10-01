@@ -15,6 +15,11 @@ public class Area extends EncargadoActivo {
 	
 	protected Area() { }
 	
+	/**
+	 * Constructor de la entidad
+	 * @param nombres
+	 * @param ciudad
+	 */
 	public Area(String nombres, Ciudad ciudad) {
 		this.nombres = nombres;
 		this.ciudad = ciudad;
